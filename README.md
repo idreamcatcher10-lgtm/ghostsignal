@@ -1,5 +1,3 @@
-> **Repository import in progress:** The complete GhostSignal MVP source is available in the chat's `GhostSignal-MVP-source.zip` artifact; it has not yet been uploaded to this GitHub repository. The existing technical documentation describes that local build and should not be mistaken for a complete online checkout.
-
 # GhostSignal 👻📟
 
 **Messages find a way.** GhostSignal is an offline-first, human-relayed QR pager — an homage to the 1990s pager, rebuilt as an installable browser app. Create a short message, show its QR to someone nearby, and let the recipient store it and show it to the next person. No backend, account, paid API, Internet connection (after the initial load), or Kiro credits are required to run this MVP.

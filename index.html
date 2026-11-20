@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1016" />
+  <meta name="description" content="GhostSignal revives the pocket pager: create, receive and relay messages face to face using QR codes. No account. No backend. Offline after first load." />
+  <meta property="og:title" content="GhostSignal — messages find a way" />
+  <meta property="og:description" content="An offline, human-relayed QR pager. Built to work when the web doesn't." />
+  <title>GhostSignal — Messages find a way.</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script src="./assets/qr-vendor.js" defer></script>
+  <script type="module" src="./assets/main.js"></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M3 10a13 13 0 0 1 18 0M6 13a9 9 0 0 1 12 0M9 16a4.5 4.5 0 0 1 6 0M12 20h.01" /></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m13 5 6 6M4 20l4.5-.9L20 7.5a2.1 2.1 0 0 0-3-3L5.5 16z" /></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M4 4h16l2 11v5H2v-5zM2 15h6l2 3h4l2-3h6" /></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3M7 12h10" /></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2zm0 0a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14M9 8h6M9 12h6" /></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3" /></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15M10 10v7m4-7v7" /></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" /></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.01" /></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 20 6v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6zM9 12l2 2 4-4" /></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6-9 9M20 14v6H4V4h6" /></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" /></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="3"/><path d="m7 9 11-6M8 15h8m-8 3h4m6-4h.01" /></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5" /></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M15 14h3v3h-3zm6 0v3m-6 4h6m-2-3v3"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 16.5A9 9 0 0 1 7.5 4 9 9 0 1 0 20 16.5z" /></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19" /></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand" aria-label="GhostSignal">
+        <div class="brand-mark"><span class="brand-ghost"><svg viewBox="0 0 44 44" role="img" aria-label="Ghost icon"><path d="M8 34V20C8 11.5 14.3 6 22 6s14 5.5 14 14v14l-6-4.5-8 4.5-8-4.5z"/><circle cx="17" cy="21" r="2.5"/><circle cx="27" cy="21" r="2.5"/></svg></span></div>
+        <div><div class="brand-name">ghost<span>signal</span></div><div class="brand-subtitle">THE HUMAN NETWORK</div></div>
+      </div>
+      <div class="nav-caption">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-nav="compose"><svg class="ico"><use href="#i-pencil"/></svg><span>Compose</span><span class="nav-mini">01</span></button>
+        <button class="nav-item" data-nav="inbox"><svg class="ico"><use href="#i-inbox"/></svg><span>Inbox</span><span id="nav-inbox-count" class="nav-mini">0</span></button>
+        <button class="nav-item" data-nav="receive"><svg class="ico"><use href="#i-scan"/></svg><span>Receive / Scan</span><span class="nav-mini">03</span></button>
+        <button class="nav-item" data-nav="guide"><svg class="ico"><use href="#i-book"/></svg><span>How it works</span><span class="nav-mini">04</span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-signal-card">
+        <div class="signal-dots"><span></span><span></span><span></span><span></span><span></span></div>
+        <p>NO TOWERS.<br/><strong>NO LIMITS TO<br/>THE IDEA.</strong></p>
+        <span>EST. 2026 — V1.0</span>
+      </div>
+      <div class="sidebar-footer"><span class="status-dot" id="side-status-dot"></span><span id="side-status">CHECKING LOCAL MODE</span></div>
+    </aside>
+
+    <main class="main-column">
+      <header class="topbar">
+        <div class="topbar-left"><span class="breadcrumb-home">MISSION CONTROL</span><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current">COMPOSE</strong></div>
+        <div class="topbar-right"><span class="clock" id="utc-time">--:--:-- UTC</span><span class="topbar-divider"></span><div class="online-pill"><span class="pill-dot" id="network-indicator"></span><span id="network-text">LOCAL SYSTEM</span></div></div>
+      </header>
+      <div class="content-width">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-bar"></span> RESURRECTION PROJECT <span class="eyebrow-star">✳</span> KIROWEEEN 2026</div>
+            <h1>Messages<br/><em>find a way.</em></h1>
+            <p>When the internet disappears, the signal lives on. A modern, offline-first pager that turns every person into a messenger.</p>
+            <div class="hero-chips"><span><span class="tiny-square"></span> NO INTERNET REQUIRED*</span><span><span class="tiny-square"></span> PEER TO PEER QR</span></div>
+          </div>
+          <div class="radar-art" aria-hidden="true">
+            <div class="radar-grid"></div><div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div><div class="radar-ring r4"></div>
+            <div class="radar-sweep"></div><span class="radar-center"><svg viewBox="0 0 44 44"><path d="M9 34V20c0-8 5.5-13.5 13-13.5S35 12 35 20v14l-5.5-4-7.5 4-7.5-4z"/><circle cx="17" cy="21" r="2.4"/><circle cx="27" cy="21" r="2.4"/></svg></span>
+            <span class="radar-n1">NODE 01</span><span class="radar-n2">NODE 02</span><span class="radar-n3">NODE 03</span>
+          </div>
+        </section>
+
+        <div class="section-header"><div><div class="section-overline">YOUR DESK</div><h2 id="view-heading">Compose a signal</h2></div><div class="section-index" id="view-index">01 / 04</div></div>
+
+        <section class="view active" data-view="compose" aria-labelledby="view-heading">
+          <div class="panel compose-panel">
+            <div class="panel-header"><div class="panel-title"><span class="panel-icon green"><svg class="ico"><use href="#i-pencil"/></svg></span><div><h3>New transmission</h3><p>Make your message ready to travel.</p></div></div><span class="small-badge">● READY TO WRITE</span></div>
+            <form id="compose-form" novalidate>
+              <div class="form-row"><label for="alias">SENDER LABEL <span class="field-note">Shown to recipients, not verified</span></label><input maxlength="24" id="alias" name="alias" placeholder="e.g. Station Alpha" autocomplete="nickname" value=""/></div>
+              <div class="form-row"><label>MESSAGE PRIORITY</label><div class="priority-grid" role="radiogroup" aria-label="Message priority">
+                <label class="priority-option selected" data-priority-card="normal"><input type="radio" name="priority" value="normal" checked/><span class="priority-symbol normal-symbol">◉</span><strong>Normal</strong><span>Everyday relay</span></label>
+                <label class="priority-option" data-priority-card="important"><input type="radio" name="priority" value="important"/><span class="priority-symbol important-symbol">◆</span><strong>Important</strong><span>Needs attention</span></label>
+                <label class="priority-option" data-priority-card="sos"><input type="radio" name="priority" value="sos"/><span class="priority-symbol sos-symbol">✳</span><strong>SOS</strong><span>Urgent message</span></label>
+              </div></div>
+              <div class="form-row"><div class="label-row"><label for="message">YOUR MESSAGE</label><span id="char-count">0 / 160</span></div><textarea id="message" name="message" rows="5" maxlength="160" placeholder="The message you want to pass along..." required></textarea><div class="input-helper"><span>Shorter messages scan faster.</span><span class="mono">UTF-8 / GS1</span></div></div>
+              <div class="form-row"><label for="expiry">AUTO-EXPIRE MESSAGE</label><div class="select-wrap"><select id="expiry" name="expiry"><option value="24">After 24 hours</option><option value="72" selected>After 72 hours</option><option value="168">After 7 days</option></select><svg class="ico"><use href="#i-clock"/></svg></div></div>
+              <div class="form-actions"><button class="primary-btn" type="submit"><svg class="ico"><use href="#i-signal"/></svg> Generate signal <svg class="ico arrow"><use href="#i-arrow"/></svg></button><button class="text-btn" type="button" id="demo-compose">Fill demo message</button></div>
+            </form>
+          </div>
+          <div class="info-strip"><svg class="ico"><use href="#i-shield"/></svg><span>Messages are stored on this device. QR packets are readable by anyone who scans them — don't include secrets.</span></div>
+        </section>
+
+        <section class="view" data-view="inbox" aria-labelledby="view-heading" hidden>
+          <div class="panel inbox-panel">
+            <div class="panel-header"><div class="panel-title"><span class="panel-icon green"><svg class="ico"><use href="#i-inbox"/></svg></span><div><h3>Signal archive</h3><p>Saved locally. Available offline.</p></div></div><span class="small-badge" id="inbox-total">0 MESSAGES</span></div>
+            <div class="inbox-tools"><div class="search-wrap"><svg class="ico"><use href="#i-search"/></svg><input id="search-messages" placeholder="Search your messages" aria-label="Search messages"/></div><div class="filter-row" role="group" aria-label="Filter inbox"><button class="filter-button active" data-filter="all">All</button><button class="filter-button" data-filter="sos">SOS</button><button class="filter-button" data-filter="important">Important</button><button class="filter-button" data-filter="normal">Normal</button></div></div>
+            <div id="message-list" class="message-list" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="view" data-view="receive" aria-labelledby="view-heading" hidden>
+          <div class="panel receive-panel">
+            <div class="panel-header"><div class="panel-title"><span class="panel-icon green"><svg class="ico"><use href="#i-scan"/></svg></span><div><h3>Receive a signal</h3><p>Scan the QR shown on another device.</p></div></div><span class="small-badge">DIRECT TRANSFER</span></div>
+            <div class="scan-layout"><div class="camera-wrap"><video id="camera-video" autoplay playsinline muted aria-label="Camera scanner preview"></video><div class="camera-placeholder" id="camera-placeholder"><svg class="ico big"><use href="#i-scan"/></svg><strong>Ready to receive</strong><span>Hold the QR code within the viewfinder.</span></div><div class="scan-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+              <div class="receive-controls"><div class="scan-support" id="scanner-capability">Checking camera QR support...</div><button class="primary-btn stretch" id="toggle-camera" type="button"><svg class="ico"><use href="#i-scan"/></svg> Start camera scanner</button><label class="outline-btn stretch file-upload"><svg class="ico"><use href="#i-download"/></svg> Import QR image<input type="file" id="qr-upload" accept="image/png,image/jpeg,image/webp" hidden /></label><p class="little-note">Browser camera scanning requires native BarcodeDetector support, HTTPS and permission. If unavailable, use a device's built-in QR scanner to copy the GS1 text, then import below.</p></div></div>
+          </div>
+          <div class="panel manual-panel"><div class="panel-header compact"><div class="panel-title"><span class="panel-icon pale"><svg class="ico"><use href="#i-copy"/></svg></span><div><h3>Import a packet manually</h3><p>Works even without a camera.</p></div></div></div><div class="form-row"><label for="packet-import">GS1 TRANSMISSION STRING</label><textarea id="packet-import" rows="3" spellcheck="false" placeholder="Paste the GS1. ... code from a sender's device"></textarea></div><button class="secondary-btn" id="import-packet" type="button"><svg class="ico"><use href="#i-arrow"/></svg> Decode & save to inbox</button></div>
+        </section>
+
+        <section class="view" data-view="guide" aria-labelledby="view-heading" hidden>
+          <div class="panel guide-panel"><div class="panel-header"><div class="panel-title"><span class="panel-icon green"><svg class="ico"><use href="#i-book"/></svg></span><div><h3>The human network</h3><p>How a 1990s pager idea became an offline QR messenger.</p></div></div></div>
+            <div class="guide-intro">No cell towers. No cloud. No automatic radio mesh. Just people, their phones, and a little bit of ingenuity.</div>
+            <div class="steps"><div class="step"><div class="step-number">01</div><div><h3>Create</h3><p>Write a short message, choose its urgency and generate a QR. The message is also saved locally.</p></div></div><div class="step"><div class="step-number">02</div><div><h3>Scan</h3><p>Another phone scans your code directly from your screen, or imports the GS1 text. You must be nearby.</p></div></div><div class="step"><div class="step-number">03</div><div><h3>Carry & relay</h3><p>The receiving phone stores the message and can show a new QR to someone else. Each relay uses the same message ID.</p></div></div><div class="step"><div class="step-number">04</div><div><h3>Stay in control</h3><p>Duplicate IDs, expiry timestamps and a six-hop limit help avoid uncontrolled forwarding. There is no background wireless transfer.</p></div></div></div>
+            <div class="guide-warning"><svg class="ico"><use href="#i-alert"/></svg><div><strong>Important limitations</strong><p>This is a hackathon prototype, not a certified emergency communications system. Messages are not encrypted, identities are not authenticated, and delivery depends entirely on people manually relaying codes. Use official emergency services whenever available.</p></div></div>
+          </div>
+          <div class="panel faq-panel"><div class="mini-eyebrow">FREQUENT QUESTIONS</div><details><summary>Does it really work without the internet?</summary><p>Yes, after first opening the site while connected and loading the PWA's service worker, it can create, display and import QR packets offline. Scanning availability depends on your browser. Always test by turning on airplane mode.</p></details><details><summary>Can someone forge a sender label?</summary><p>Yes. Labels are not verified. CRC32 catches accidental data corruption but is not a digital signature or encryption.</p></details><details><summary>Can the message travel between people far apart?</summary><p>Only if intermediate people physically carry the QR packet and pass it onward. This app does not send messages over Bluetooth, Wi-Fi Direct, cellular, or mesh networking.</p></details></div>
+        </section>
+      </div>
+      <footer class="site-footer"><div>GHOSTSIGNAL <span>© 2026</span> <span class="footer-sep">/</span> BUILT FOR THE DISCONNECTED WORLD</div><div>* OFFLINE AFTER FIRST LOAD & CACHE <span class="footer-sep">·</span> HACKATHON PROTOTYPE</div></footer>
+    </main>
+
+    <aside class="right-column" aria-label="Signal details">
+      <div class="right-heading"><span>LIVE TRANSMISSION</span><span class="side-dash">↗</span></div>
+      <div class="broadcast-panel" id="broadcast-panel"><div class="broadcast-top"><span><span class="broadcast-dot"></span> SIGNAL PREVIEW</span><span id="qr-status">NO ACTIVE SIGNAL</span></div>
+        <div id="qr-placeholder" class="qr-placeholder"><div class="qr-placeholder-bg"><svg class="ico"><use href="#i-qr"/></svg></div><p>Your signal will appear here</p><span>Compose a message to generate a scannable QR code.</span></div>
+        <div id="qr-ready" class="qr-ready" hidden><div class="qr-code-shell" id="qr-mount"></div><p class="qr-instruction">Hold this QR up to another device's camera.</p><div class="qr-data-line"><span>PACKET ID</span><strong id="qr-packet-id">—</strong></div><div class="qr-data-line"><span>RELAY HOPS</span><strong id="qr-hops">—</strong></div><div class="qr-data-line"><span>EXPIRES</span><strong id="qr-expiry">—</strong></div><div class="qr-buttons"><button class="secondary-btn" id="copy-packet"><svg class="ico"><use href="#i-copy"/></svg> Copy packet</button><button class="secondary-btn" id="download-qr"><svg class="ico"><use href="#i-download"/></svg> Save QR</button><button class="secondary-btn wide" id="expand-qr"><svg class="ico"><use href="#i-eye"/></svg> Open large QR for scanning</button></div></div>
+      </div>
+      <div class="stat-section"><div class="right-heading right-heading-small"><span>STATION TELEMETRY</span><span class="side-dash">↗</span></div><div class="stats-grid"><div class="stat-box"><span>TOTAL SAVED</span><strong id="stat-total">00</strong><small>LOCAL MESSAGES</small></div><div class="stat-box"><span>SOS SIGNALS</span><strong id="stat-sos">00</strong><small>PRIORITY ALERTS</small></div></div></div>
+      <div class="mini-guide"><div class="mini-guide-icon"><svg class="ico"><use href="#i-signal"/></svg></div><div><strong>How does it travel?</strong><p>You → QR → another phone → QR → next person. Each scan is a physical handoff.</p><button type="button" data-nav="guide">Explore the process <span>↗</span></button></div></div>
+      <div class="build-label"><span class="build-label-dot"></span> VERSION 0.1.0 <span>·</span> HUMAN RELAY PROTOCOL</div>
+    </aside>
+  </div>
+  <div class="mobile-nav" aria-label="Mobile navigation"><button class="active" data-nav="compose"><svg class="ico"><use href="#i-pencil"/></svg><span>Create</span></button><button data-nav="inbox"><svg class="ico"><use href="#i-inbox"/></svg><span>Inbox</span></button><button data-nav="receive"><svg class="ico"><use href="#i-scan"/></svg><span>Scan</span></button><button data-nav="guide"><svg class="ico"><use href="#i-book"/></svg><span>Guide</span></button></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="message-dialog" class="message-dialog" aria-label="Message details"><form method="dialog" class="dialog-header"><span>TRANSMISSION DETAIL</span><button class="icon-btn" aria-label="Close dialog"><svg class="ico"><use href="#i-close"/></svg></button></form><div id="message-dialog-content"></div><div class="dialog-actions"><button class="secondary-btn" id="dialog-relay" type="button">Relay as QR <svg class="ico"><use href="#i-arrow"/></svg></button><button class="danger-btn" id="dialog-delete" type="button"><svg class="ico"><use href="#i-trash"/></svg> Delete</button></div></dialog>
+<dialog id="qr-dialog" class="qr-dialog" aria-label="Large scannable QR code"><form method="dialog" class="dialog-header"><span>SHOW TO ANOTHER DEVICE</span><button class="icon-btn" aria-label="Close QR dialog"><svg class="ico"><use href="#i-close"/></svg></button></form><div class="qr-dialog-body"><div id="qr-dialog-mount"></div><p>Scan this code on the next phone. Keep your screen brightness high.</p></div></dialog>
+</body>
+</html>

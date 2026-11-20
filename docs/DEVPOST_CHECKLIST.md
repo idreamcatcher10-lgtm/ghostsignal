@@ -1,6 +1,6 @@
 # Kiroween 2026 — honest submission checklist
 
-**Project:** GhostSignal. **Category:** Resurrection. **Status:** working code package; no public live deployment, GitHub repository created; source import pending, no judge video, no genuine Kiro development yet.
+**Project:** GhostSignal. **Category:** Resurrection. **Status:** working code package; no public live deployment, no GitHub URL, no judge video, no genuine Kiro development yet.
 
 ## Before final submission
 
