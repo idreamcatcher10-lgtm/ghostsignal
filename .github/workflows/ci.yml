@@ -1,0 +1,30 @@
+name: CI — Build and tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install development dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build and run protocol tests
+        run: npm run check
+      - name: Validate Kiroween required files
+        shell: bash
+        run: |
+          test -f LICENSE
+          test -f .kiro/specs/ghostsignal/requirements.md
+          test -f .kiro/specs/ghostsignal/design.md
+          test -f .kiro/specs/ghostsignal/tasks.md
+          test -f dist/index.html
