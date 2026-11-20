@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+coverage/
+# Keep dist checked in for no-build preview and judge convenience.
+# IMPORTANT: .kiro/ and its children must be committed for Kiroween.
