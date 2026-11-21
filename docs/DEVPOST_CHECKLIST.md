@@ -1,19 +1,19 @@
 # Kiroween 2026 — honest submission checklist
 
-**Project:** GhostSignal. **Category:** Resurrection. **Status:** working code package; no public live deployment, no GitHub URL, no judge video, no genuine Kiro development yet.
+**Project:** GhostSignal. **Category:** Resurrection. **Status:** public GitHub source and passing CI (11 tests); HTTPS deployment blocked until GitHub Pages is enabled; no judge video; no genuine Kiro development yet.
 
 ## Before final submission
 
 - [ ] Actually use Kiro for significant implementation work, tests/refactors or an enhancement. Save authentic Kiro artifacts and explain actual use, not prospective plans.
-- [ ] Public GitHub repository with LICENSE visible and `.kiro` at the repository root. Do not put `.kiro` in `.gitignore`.
+- [x] Public GitHub repository (https://github.com/idreamcatcher10-lgtm/ghostsignal) with LICENSE and `.kiro` at the repository root.
 - [ ] Static HTTPS application URL. Keep it available free for the entire judging period.
 - [ ] Test on physical devices (offline, camera support limitations) and update descriptions accordingly.
 - [ ] Public YouTube demonstration under 3 minutes, actually showing a functioning phone/PWA and explaining real Kiro use.
 - [ ] Devpost Project Story (problem, solution, how it works, implementation decisions, challenges and next steps).
-- [ ] Devpost 'Built With' reflects actual stack (TypeScript, HTML, CSS, Service Worker, IndexedDB, BarcodeDetector, Kiro **only after use**). Do NOT list React, Vite or Web Crypto unless later added.
+- [ ] Devpost 'Built With' reflects actual stack (TypeScript, HTML, CSS, Service Worker, IndexedDB, BarcodeDetector, bundled jsQR fallback, Kiro **only after use**). Do NOT list React, Vite or Web Crypto unless later added.
 - [ ] Extra award eligibility verified truthfully (startup founder/LinkedIn, student eligibility, Kiro Crew app, 2025 registration, etc.).
 - [ ] All application/contact fields and jurisdiction/age answers accurately answered.
-- [ ] Pre-existing code disclosure: new hackathon work + vendor QR encoder sourced from qrcode-terminal and any genuinely pre-existing or externally drafted code as required.
+- [ ] Pre-existing code disclosure: new hackathon work + vendor QR encoder sourced from qrcode-terminal, Apache-2.0-licensed jsQR decoder and any genuinely pre-existing or externally drafted code as required.
 
 ## Optional Devpost project summary draft
 

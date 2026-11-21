@@ -44,3 +44,20 @@ The UI was also exercised in headless Chromium by injecting the exact compiled H
 - Open mobile large-QR dialog with a QR image sized for camera scanning.
 
 **Qualification:** This proves browser UI logic with injected local assets and simulated storage, **not** real hosted-origin IndexedDB/service worker/camera operation. The manual physical-device checklist remains required before competition submission.
+
+
+## Automated improvement — 21 November 2026
+
+The public GitHub CI run for commit `54ef951b1a19ed7bcd73758a529e5c222e962f3f`
+passed **11/11 tests** after the new offline software QR decoder was bundled.
+The added integration test rasterizes a GhostSignal-generated GS1 QR into
+RGBA pixels and confirms the bundled jsQR decoder returns the original packet.
+
+CI: https://github.com/idreamcatcher10-lgtm/ghostsignal/actions/runs/44848311300
+
+The GitHub Pages workflow's build phase also passed, but the deploy phase
+failed because repository GitHub Pages has not yet been enabled in Settings.
+No working public demo URL is claimed at this point.
+
+**Still not tested on real devices:** camera permission/scan accuracy, Safari
+PWA caching in airplane mode, and QR relay across physical phones.

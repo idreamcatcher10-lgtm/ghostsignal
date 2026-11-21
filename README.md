@@ -6,10 +6,11 @@
 
 ## 🚀 Run the app
 
-Prerequisite: **Node.js 22+**. The archive includes prebuilt `dist/` assets, so it works without running `npm install`.
+Prerequisite: **Node.js 22+**. For the latest QR-scanner compatibility changes, install development dependencies and rebuild the bundled app:
 
 ```bash
-node scripts/serve.mjs
+npm install
+npm run dev   # rebuild dist/ and start the local server
 ```
 
 Open **http://127.0.0.1:4173**. On first use, keep connectivity available long enough for the PWA assets to cache; subsequent reloads should work offline in supporting browsers on HTTPS or localhost.
@@ -28,7 +29,7 @@ npm test                 # build + protocol tests
 
 Upload the **contents of `dist/`** to Cloudflare Pages, Vercel static hosting, Netlify, or other HTTPS static hosting. Configure the website's root directory appropriately. No server-side code or API keys are required. HTTPS is needed for service workers and camera permission away from localhost.
 
-GitHub must be created by the submitter; this archive intentionally does **not** claim a repository URL or a live deployment that does not exist.
+Public GitHub repository: https://github.com/idreamcatcher10-lgtm/ghostsignal . A GitHub Actions workflow builds, tests, and publishes the PWA to GitHub Pages **after Pages is enabled in repository Settings**. No public demo URL should be claimed until the deployment succeeds.
 
 ## 📱 Demo on two devices
 
@@ -36,11 +37,11 @@ GitHub must be created by the submitter; this archive intentionally does **not**
 2. Turn on airplane mode on both phones; optionally keep the local Wi-Fi link disabled too.
 3. On Phone A, go to **Compose**, click **Fill demo message**, then **Generate signal**.
 4. Phone A displays a real QR with a `GS1` packet encoded in it.
-5. On Phone B, go to **Receive / Scan** and scan the QR using a browser with native `BarcodeDetector` support. If not supported, use the phone camera's QR reader to obtain and copy the QR's text, then paste the `GS1...` string into **Import a packet manually**. QR image import also requires native BarcodeDetector.
+5. On Phone B, go to **Receive / Scan** and scan the QR using the camera. GhostSignal tries native `BarcodeDetector` when available and its bundled offline `jsQR` decoder otherwise; QR image uploads are also supported. If scanning fails or camera permissions are unavailable, copy and paste the `GS1...` packet into **Import a packet manually**.
 6. Message appears in Phone B's **Inbox**. Open it and tap **Relay as QR**. Relay count increases, while the message ID remains unchanged.
 7. A third phone can repeat the relay. Re-importing a packet with the same ID will be rejected as a duplicate. Relaying stops after six hops or when expired.
 
-**Known limitation:** Native in-app QR camera/image scanning relies on the experimental [Barcode Detection API](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API) and is not supported by all browsers. The manual `GS1` import fallback is always available. Offline operation on particular physical devices has **not yet been certified** by this package's automated tests.
+**Known limitation:** The offline `jsQR` fallback removes the requirement for native [BarcodeDetector](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API), but camera permissions, focus, lighting and low-end phone performance vary. Manual `GS1` import remains available. Physical-device camera scanning and offline PWA behavior still require hands-on verification.
 
 ## ✨ Implemented
 
@@ -48,7 +49,7 @@ GitHub must be created by the submitter; this archive intentionally does **not**
 - SOS, Important, Normal priorities
 - Versioned `GS1` QR packet protocol with Unicode/UTF-8 support
 - QR generation without a CDN or cloud API
-- QR camera and image import **only where native BarcodeDetector is supported**
+- QR camera and image import with native BarcodeDetector or a bundled jsQR software fallback
 - Manual QR packet copy/import fallback for all browsers
 - Device-local IndexedDB message archive; localStorage fallback
 - Browser-based PWA manifest and offline service-worker caching
@@ -77,7 +78,7 @@ Local archive                               Local archive
 
 ## 🧪 Tests
 
-Run `npm test`. Unit coverage includes roundtrip serialization with Vietnamese Unicode, CRC32, tampering, expiry, limits, invalid input and QR payload format. The actual QR pixel matrix was separately rendered and independently decoded with OpenCV QRCodeDetector during project QA. See `docs/QA_REPORT.md`.
+Run `npm test`. Unit coverage includes roundtrip serialization with Vietnamese Unicode, CRC32, tampering, expiry, limits, invalid input and QR payload format. The actual QR pixel matrix was separately rendered and independently decoded with OpenCV QRCodeDetector during project QA. An automated integration test now verifies that bundled jsQR can decode GhostSignal's generated QR pixels. See `docs/QA_REPORT.md`.
 
 ## 🛠 Stack
 
