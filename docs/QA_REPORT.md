@@ -55,9 +55,7 @@ RGBA pixels and confirms the bundled jsQR decoder returns the original packet.
 
 CI: https://github.com/idreamcatcher10-lgtm/ghostsignal/actions/runs/44848311300
 
-The GitHub Pages workflow's build phase also passed, but the deploy phase
-failed because repository GitHub Pages has not yet been enabled in Settings.
-No working public demo URL is claimed at this point.
+An initial GitHub Pages deployment failed because Pages had not yet been enabled. After Pages was enabled, rerunning the failed jobs succeeded. GitHub Actions reported a successful Pages deployment in run 44848449639, attempt 2, at https://idreamcatcher10-lgtm.github.io/ghostsignal/ . An automated HTTP smoke test is being added to the deploy workflow; direct HTTP access from the assistant's environment was unavailable at this stage.
 
 **Still not tested on real devices:** camera permission/scan accuracy, Safari
 PWA caching in airplane mode, and QR relay across physical phones.

@@ -29,7 +29,7 @@ npm test                 # build + protocol tests
 
 Upload the **contents of `dist/`** to Cloudflare Pages, Vercel static hosting, Netlify, or other HTTPS static hosting. Configure the website's root directory appropriately. No server-side code or API keys are required. HTTPS is needed for service workers and camera permission away from localhost.
 
-Public GitHub repository: https://github.com/idreamcatcher10-lgtm/ghostsignal . A GitHub Actions workflow builds, tests, and publishes the PWA to GitHub Pages **after Pages is enabled in repository Settings**. No public demo URL should be claimed until the deployment succeeds.
+Public GitHub repository: https://github.com/idreamcatcher10-lgtm/ghostsignal . A GitHub Actions now builds, tests, and publishes the PWA to GitHub Pages. The latest successful deployment is at **https://idreamcatcher10-lgtm.github.io/ghostsignal/**. A post-deployment HTTP smoke-test workflow checks the public HTML and PWA assets; physical-device testing is still required.
 
 ## 📱 Demo on two devices
 
