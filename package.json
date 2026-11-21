@@ -12,7 +12,8 @@
     "check": "node scripts/build.mjs && node --test tests/*.test.mjs"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "jsqr": "1.4.0"
   },
   "license": "MIT"
 }

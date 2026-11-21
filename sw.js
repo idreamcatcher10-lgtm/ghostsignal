@@ -1,5 +1,5 @@
-const CACHE = 'ghostsignal-offline-v1.0.1';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './assets/styles.css', './assets/main.js', './assets/codec.js', './assets/store.js', './assets/qr.js', './assets/scanner.js', './assets/qr-vendor.js', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png'];
+const CACHE = 'ghostsignal-offline-v1.0.2';
+const ASSETS = ['./', './index.html', './manifest.webmanifest', './assets/styles.css', './assets/main.js', './assets/codec.js', './assets/store.js', './assets/qr.js', './assets/scanner.js', './assets/qr-vendor.js', './assets/jsqr.js', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });

@@ -1,7 +1,7 @@
 import { asStored, createPacket, decodePacket, encodePacket, MAX_BODY_CHARS, relayPacket, type Packet, type Priority, type StoredMessage } from './codec.js';
 import { allMessages, deleteMessage, getPreferredAlias, putMessage, setPreferredAlias } from './store.js';
 import { qrCanvas } from './qr.js';
-import { canScanNatively, CameraScanner, decodeImage } from './scanner.js';
+import { canScanQr, CameraScanner, decodeImage } from './scanner.js';
 
 type View = 'compose' | 'inbox' | 'receive' | 'guide';
 const labels: Record<View, string> = { compose: 'Compose a signal', inbox: 'Your message archive', receive: 'Receive a signal', guide: 'How it works' };
@@ -176,9 +176,9 @@ function downloadQr(): void {
   toast('QR image saved.');
 }
 function updateCameraSupport(): void {
-  const available = canScanNatively();
+  const available = canScanQr();
   ($('#toggle-camera') as HTMLButtonElement).disabled = !available;
-  $('#scanner-capability').textContent = available ? 'Native QR scanning is supported by your browser.' : 'Native camera QR scanning is unavailable here. Use import below or copy the GS1 text with your phone camera.';
+  $('#scanner-capability').textContent = available ? (window.BarcodeDetector ? 'Camera QR scanning is ready (native decoder).' : 'Camera QR scanning is ready (offline software decoder).') : 'QR scanning is unavailable here. Paste the GS1 packet using the import field below.';
 }
 function stopCamera(): void {
   scanner.stop();

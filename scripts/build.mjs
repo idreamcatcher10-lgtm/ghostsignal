@@ -15,6 +15,9 @@ if (result.status !== 0) {
 for (const f of ['index.html', 'manifest.webmanifest', 'sw.js', 'robots.txt']) cpSync(join(root, f), join(dist, f));
 cpSync(join(root, 'assets'), join(dist, 'assets'), { recursive: true, force: true });
 cpSync(join(root, 'src', 'styles.css'), join(dist, 'assets', 'styles.css'));
+// Bundle offline QR decoder for browsers without native BarcodeDetector.
+cpSync(join(root, 'node_modules', 'jsqr', 'dist', 'jsQR.js'), join(dist, 'assets', 'jsqr.js'));
+cpSync(join(root, 'vendor', 'THIRD_PARTY_LICENSE_APACHE_2.txt'), join(dist, 'assets', 'THIRD_PARTY_LICENSE_APACHE_2.txt'));
 
 // Offline browser bundle of the unmodified MIT-licensed Arase QR encoder,
 // as vendored in qrcode-terminal (Apache-2.0 distribution). See vendor/README.md.
