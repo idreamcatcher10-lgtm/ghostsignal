@@ -13,7 +13,7 @@
 - [ ] Devpost 'Built With' reflects actual stack (TypeScript, HTML, CSS, Service Worker, IndexedDB, BarcodeDetector, bundled jsQR fallback, Kiro **only after use**). Do NOT list React, Vite or Web Crypto unless later added.
 - [ ] Extra award eligibility verified truthfully (startup founder/LinkedIn, student eligibility, Kiro Crew app, 2025 registration, etc.).
 - [ ] All application/contact fields and jurisdiction/age answers accurately answered.
-- [ ] Pre-existing code disclosure: new hackathon work + vendor QR encoder sourced from qrcode-terminal, Apache-2.0-licensed jsQR decoder and any genuinely pre-existing or externally drafted code as required.
+- [ ] Confirm the project was created during the submission period. Keep third-party open-source QR library license notices, and disclose any genuinely pre-existing non-standard code or work if applicable under the official rules.
 
 ## Optional Devpost project summary draft
 

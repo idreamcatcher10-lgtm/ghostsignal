@@ -96,7 +96,7 @@ Run `npm test`. Unit coverage includes roundtrip serialization with Vietnamese U
 
 ## 👻 Kiroween 2026 status — read before submitting
 
-Category: **Resurrection** (reimagines the classic pager). The repo includes **prepared** `.kiro/specs/` and `.kiro/steering/` documents to make later Kiro work straightforward. They were drafted **outside Kiro**, so they **do not demonstrate that Kiro was used**. This project has **NOT** yet met the required Kiro-use portion of Kiroween 2026.
+Category: **Resurrection** (reimagines the classic pager). The repo includes **prepared** `.kiro/specs/` and `.kiro/steering/` documents to make later Kiro work straightforward. These are **planning drafts, not proof of completed Kiro implementation**. The project still needs a genuinely implemented and documented Kiro development phase to meet Kiroween 2026 requirements.
 
 Before submitting, the entrant must genuinely use Kiro to review/implement meaningful improvements and tests, preserve actual Kiro-generated specs/changes/hooks as appropriate, accurately disclose its use, create a public GitHub repository, deploy the app, perform real device tests, and record an actual YouTube demo under three minutes. Details: `docs/KIRO_HANDOFF.md` and `docs/DEVPOST_CHECKLIST.md`.
 

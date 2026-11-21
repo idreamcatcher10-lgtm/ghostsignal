@@ -1,6 +1,6 @@
-# GhostSignal requirements — draft prepared before Kiro use
+# GhostSignal requirements — Kiro development draft
 
-**Status:** Prepared externally, pending genuine review/implementation inside Kiro. This document is not evidence that Kiro has already been used.
+**Status:** Planning draft pending review and implementation in Kiro. This document by itself is not evidence of completed Kiro work.
 
 ## User stories and acceptance criteria
 
@@ -48,4 +48,4 @@ As a user of a small phone, I want to reach compose, inbox and receive without h
 Automatic mesh networking; Wi-Fi/Bluetooth transport; sender authentication; end-to-end encryption; backend; GPS; real emergency delivery guarantee.
 
 ## Next work for Kiro
-Review these externally drafted criteria, propose relevant improvements, implement and test them using Kiro specs/tasks, and record the actual Kiro steps, decisions, hooks and generated artifacts. Never describe this prepared draft as Kiro-authored.
+Review these draft criteria, propose improvements, implement and test them with Kiro specs/tasks, and document the Kiro operations, decisions, hooks and results that actually occurred. Do not attribute work to Kiro without an implementation record.

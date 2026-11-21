@@ -1,4 +1,4 @@
-# GhostSignal implementation tasks — external pre-Kiro handoff
+# GhostSignal implementation tasks — Kiro development backlog
 
 **Note:** These checked items were implemented without Kiro. Checked means present in source code, NOT performed by Kiro.
 

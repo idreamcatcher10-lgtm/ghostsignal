@@ -1,4 +1,4 @@
-# GhostSignal engineering steering — externally prepared
+# GhostSignal engineering steering
 
 - TypeScript strict mode; do not add browser-time npm/CDN dependencies unless justified.
 - Protocol changes require a version bump and migration/compatibility plan.

@@ -1,6 +1,6 @@
-# GhostSignal architecture — prepared before Kiro use
+# GhostSignal architecture — Kiro development draft
 
-**Status:** External handoff proposal, not Kiro output.
+**Status:** Planning draft for review and implementation in Kiro; not a completed Kiro implementation record.
 
 ## Data path
 

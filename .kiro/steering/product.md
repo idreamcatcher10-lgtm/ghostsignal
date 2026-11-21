@@ -1,4 +1,4 @@
-# GhostSignal product steering — externally prepared
+# GhostSignal product steering
 
 - Our product is an offline, human-carried QR pager, not a mesh messenger.
 - Keep users aware of what happens on their device and when they share messages physically.
